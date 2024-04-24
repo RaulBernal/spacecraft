@@ -50,7 +50,6 @@ services:
         target: /home/grafana/data.sqlite3 # inside grafana, needs to be absolute
       - $HOME/grafana/datasource.yaml:/etc/grafana/provisioning/datasources/datasource.yaml
       - $HOME/grafana/dashboards:/var/lib/grafana/dashboards
-      #- $HOME/grafana/dashboards:/etc/grafana/provisioning/dashboards
       - $HOME/grafana/dashboards/dashboard_providers.yaml:/etc/grafana/provisioning/dashboards/dashboard_providers.yaml
 
     ports:
