@@ -31,7 +31,7 @@ datasources:
     uid: "fdjmu6y220nb4c"
     editable: true
     jsonData:
-      path: /home/grafana/data.sqlite3
+      path: /home/grafana/data.sqlite3?mode=ro
 EOF
 cat <<EOF >$HOME/grafana/docker-compose.yml
 version: '3.8'
