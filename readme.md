@@ -17,10 +17,12 @@ Please follow this instructions to get everything restored again, what we will d
 Prerequisites are:
 - Linux amd64 (Ubuntu 22 recommended)
 - To have a root or sudoer account
-- GoLang v1.22 (`wget `
-  - Get script: `wget `
-  - Run it: `chmod +x && ./install_golang.sh`
+- GoLang v1.22
+  - Get script: `wget https://raw.githubusercontent.com/RaulBernal/spacecraft/main/install_go.sh`
+  - Run it: `chmod +x && ./install_go.sh`
 - Docker & Docker Compose
+  - Get script: `wget https://raw.githubusercontent.com/RaulBernal/spacecraft/main/install_docker.sh`
+  - Run it: `chmod +x && ./install_docker.sh`
 
 ### Install the node.
 1. Download automated script
