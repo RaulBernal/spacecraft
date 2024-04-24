@@ -19,10 +19,10 @@ Prerequisites are:
 - To have a root or sudoer account
 - GoLang v1.22
   - Get script: `wget https://raw.githubusercontent.com/RaulBernal/spacecraft/main/install_go.sh`
-  - Run it: `chmod +x && ./install_go.sh`
+  - Run it: `chmod +x install_go.sh && ./install_go.sh`
 - Docker & Docker Compose
   - Get script: `wget https://raw.githubusercontent.com/RaulBernal/spacecraft/main/install_docker.sh`
-  - Run it: `chmod +x && ./install_docker.sh`
+  - Run it: `chmod +x install_docker.sh && ./install_docker.sh`
 
 ### Install the node.
 1. Download automated script
