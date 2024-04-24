@@ -18,7 +18,6 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 1,
   "links": [],
   "panels": [
     {
@@ -330,9 +329,9 @@
             "type": "frser-sqlite-datasource",
             "uid": "fdjmu6y220nb4c"
           },
-          "queryText": "SELECT\n  time,\n  count(*) AS num_transactions\nFROM transactions\nGROUP BY strftime('%Y-%m-%d %H', time)\nORDER BY \"time\";",
+          "queryText": "SELECT\n  strftime('%Y-%m-%dT%H:%M:%SZ', time) AS time,\n  count(*) AS num_transactions\nFROM transactions\nGROUP BY strftime('%Y-%m-%d %H', time)\nORDER BY \"time\";",
           "queryType": "table",
-          "rawQueryText": "SELECT\n  time,\n  count(*) AS num_transactions\nFROM transactions\nGROUP BY strftime('%Y-%m-%d %H', time)\nORDER BY \"time\";",
+          "rawQueryText": "SELECT\n  strftime('%Y-%m-%dT%H:%M:%SZ', time) AS time,\n  count(*) AS num_transactions\nFROM transactions\nGROUP BY strftime('%Y-%m-%d %H', time)\nORDER BY \"time\";",
           "refId": "A",
           "timeColumns": [
             "time",
@@ -446,9 +445,9 @@
             "type": "frser-sqlite-datasource",
             "uid": "fdjmu6y220nb4c"
           },
-          "queryText": "SELECT\n  time,\n  count(*) AS num_blocks\nFROM blocks\nGROUP BY strftime('%Y-%m-%d %H:%M:00', time)\nORDER BY \"time\";\n",
+          "queryText": "SELECT\n  strftime('%Y-%m-%dT%H:%M:%SZ', time) AS time,\n  count(*) AS num_blocks\nFROM blocks\nGROUP BY strftime('%Y-%m-%d %H:%M:00', time)\nORDER BY \"time\";\n",
           "queryType": "time series",
-          "rawQueryText": "SELECT\n  time,\n  count(*) AS num_blocks\nFROM blocks\nGROUP BY strftime('%Y-%m-%d %H:%M:00', time)\nORDER BY \"time\";\n",
+          "rawQueryText": "SELECT\n  strftime('%Y-%m-%dT%H:%M:%SZ', time) AS time,\n  count(*) AS num_blocks\nFROM blocks\nGROUP BY strftime('%Y-%m-%d %H:%M:00', time)\nORDER BY \"time\";\n",
           "refId": "A",
           "timeColumns": [
             "time"
@@ -621,9 +620,9 @@
             "type": "frser-sqlite-datasource",
             "uid": "fdjmu6y220nb4c"
           },
-          "queryText": "SELECT\n  time,\n  count(*) AS num_blocks\nFROM blocks\nGROUP BY strftime('%Y-%m-%d', time)\nORDER BY \"time\";",
+          "queryText": "SELECT\n  strftime('%Y-%m-%dT%H:%M:%SZ', time) AS time,\n  count(*) AS num_blocks\nFROM blocks\nGROUP BY strftime('%Y-%m-%d', time)\nORDER BY \"time\";",
           "queryType": "table",
-          "rawQueryText": "SELECT\n  time,\n  count(*) AS num_blocks\nFROM blocks\nGROUP BY strftime('%Y-%m-%d', time)\nORDER BY \"time\";",
+          "rawQueryText": "SELECT\n  strftime('%Y-%m-%dT%H:%M:%SZ', time) AS time,\n  count(*) AS num_blocks\nFROM blocks\nGROUP BY strftime('%Y-%m-%d', time)\nORDER BY \"time\";",
           "refId": "A",
           "timeColumns": [
             "time",
@@ -723,9 +722,9 @@
             "type": "frser-sqlite-datasource",
             "uid": "fdjmu6y220nb4c"
           },
-          "queryText": "SELECT\n  time,\n  count(*) AS num_blocks\nFROM blocks\nGROUP BY strftime('%Y-%m-%d %H:00:00', time)\nORDER BY \"time_group\";\n",
+          "queryText": "SELECT\n  strftime('%Y-%m-%dT%H:%M:%SZ', time) AS time,\n  count(*) AS num_blocks\nFROM blocks\nGROUP BY strftime('%Y-%m-%d %H:00:00', time)\nORDER BY \"time_group\";\n",
           "queryType": "table",
-          "rawQueryText": "SELECT\n  time,\n  count(*) AS num_blocks\nFROM blocks\nGROUP BY strftime('%Y-%m-%d %H:00:00', time)\nORDER BY \"time_group\";\n",
+          "rawQueryText": "SELECT\n  strftime('%Y-%m-%dT%H:%M:%SZ', time) AS time,\n  count(*) AS num_blocks\nFROM blocks\nGROUP BY strftime('%Y-%m-%d %H:00:00', time)\nORDER BY \"time_group\";\n",
           "refId": "A",
           "timeColumns": [
             "time",
@@ -991,6 +990,6 @@
   "timezone": "browser",
   "title": "SpaceCraft Alpha",
   "uid": "adjn2zjnwi0owc",
-  "version": 14,
+  "version": 1,
   "weekStart": ""
 }
