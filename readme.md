@@ -29,5 +29,8 @@ Prerequisites are:
 ```
 wget https://raw.githubusercontent.com/RaulBernal/spacecraft/main/install_gnoland.sh
 ```
-2. E 
+2. Run it
+```
+chmod +x install_gnoland.sh && ./install_gnoland.sh
+``` 
 
