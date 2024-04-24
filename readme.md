@@ -24,7 +24,7 @@ Prerequisites are:
   - Get script: `wget https://raw.githubusercontent.com/RaulBernal/spacecraft/main/install_docker.sh`
   - Run it: `chmod +x install_docker.sh && ./install_docker.sh`
 
-### Install the node.
+### Install the Gno.Land node.
 1. Download automated script
 ```
 wget https://raw.githubusercontent.com/RaulBernal/spacecraft/main/install_gnoland.sh
@@ -57,4 +57,25 @@ chmod +x install_tx-indexer.sh && ./install_tx-indexer.sh
 - You can start the node with: `sudo systemctl start tx-indexer.service && sudo journalctl -fu tx-indexer -o cat`
 - You can stop  the node with: `sudo systemctl stop tx-indexer.service`
 - If you want to reset the TX-Indexer' state to block 0 run: `./reset_tx-indexer.sh` (stop the daemon first please)
+
+### Download Supernova and automate some flying TXs
+1. Download automated script
+```
+wget https://raw.githubusercontent.com/RaulBernal/spacecraft/main/install_supernova.sh
+```
+
+2. Run it
+```
+chmod +x install_supernova.sh && ./install_supernova.sh
+```
+
+#### Notes
+- You can run the Supernova_Simulation in a  SCREEN session: `screen -S Supernova`
+```
+cd supernova
+./supernova_simulation_light.sh
+```
+- Press CTRL + A + D [to leave it running](https://linuxize.com/post/how-to-use-linux-screen/)
+- To recover a running screen session type in terminal: `screen -r name_session` (`screen -r`   to list all)"
+
 
