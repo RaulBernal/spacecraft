@@ -12,10 +12,10 @@ Please follow this instructions to get everything restored again, what we will d
 5. Compose a Grafana (docker image) with predefined connection to SQLite3 file & new working Dashboard
 
 ## Instructions
-> These instructions are tested in two different hosts with Ubuntu Linux v22 amd64
+> These instructions were tested in two different hosts running Ubuntu Linux v22 amd64
 
 Prerequisites are:
-- Linux amd64 (Ubuntu 22 recommended)
+- Linux amd64 (Ubuntu v22 recommended)
 - To have a root or sudoer account
 - GoLang v1.22
   - Get script: `wget https://raw.githubusercontent.com/RaulBernal/spacecraft/main/install_go.sh`
@@ -118,6 +118,7 @@ chmod +x install_grafana.sh && ./install_grafana.sh
 - Check if is running with: `docker ps`
 - Check LOGs with: `docker logs grafana`
 - If you want to rebuild the Grafana docker: `cd $HOME/grafana && docker-compose down && docker-compose up -d`
+- If you get this error: `ERROR: Volume grafana_data declared as external, but could not be found.` you can try to solve with: `docker volume create --name=grafana_data`
   
 ## Image 1
 ![telegram-cloud-photo-size-4-5857134381905329881-y](https://github.com/RaulBernal/spacecraft/assets/3751926/d9cf61a7-69ad-49d9-a9a2-1f8d6c969efd)
