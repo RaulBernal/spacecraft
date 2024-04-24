@@ -3,7 +3,7 @@ git clone https://github.com/gnolang/supernova.git
 cd supernova
 make build
 cp build/supernova $GOBIN
-cat <<'EOF' >>$HOME/supernova/supernova_simulation_light.sh
+cat <<'EOF' >$HOME/supernova/supernova_simulation_light.sh
 #!/bin/bash
 
 while true; do
