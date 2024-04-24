@@ -46,7 +46,7 @@ services:
     image: grafana/grafana:latest
     volumes:
       - type: bind
-        source: /home/ddex/enginetwo/data.sqlite3 # the real host place
+        source: $HOME/enginetwo/data.sqlite3 # the real host place
         target: /home/grafana/data.sqlite3 # inside grafana, needs to be absolute
       - $HOME/grafana/datasource.yaml:/etc/grafana/provisioning/datasources/datasource.yaml
       - $HOME/grafana/dashboards:/var/lib/grafana/dashboards
