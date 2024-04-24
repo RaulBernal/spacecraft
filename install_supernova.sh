@@ -1,3 +1,18 @@
+#!/bin/bash
+
+folder_to_check="$HOME/supernova"
+
+if [ -d "$folder_to_check" ]; then
+    printf '\U2757'
+    echo "W A R N I N G ! ! ! the folder $folder_to_check is going to be erased. STOP the Supernova scripts before continue."
+    echo
+    # Pide confirmación al usuario
+    printf '\U1F984 Please be careful you can lose important data if not a dev environment\n\n'
+    read -p "If you want to continue press ENTER, if not CTRL+C now:" confirmacion
+    printf '\U1F984 Deleting... \n'
+    rm -rf  $HOME/supernova
+fi
+
 cd ~
 git clone https://github.com/gnolang/supernova.git
 cd supernova
