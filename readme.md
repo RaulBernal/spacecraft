@@ -29,8 +29,32 @@ Prerequisites are:
 ```
 wget https://raw.githubusercontent.com/RaulBernal/spacecraft/main/install_gnoland.sh
 ```
+
 2. Run it
 ```
 chmod +x install_gnoland.sh && ./install_gnoland.sh
-``` 
+```
+
+#### Notes
+- After execute the script the daemon will be running and persistent with systemd.
+- You can start the node with: `sudo systemctl start gnoland.service && sudo journalctl -fu gnoland -o cat`
+- You can stop  the node with: `sudo systemctl stop gnoland.service`
+- If you want to reset the Gnoland' state to block 0 run: `./reset_gnoland.sh` (stop the daemon first please)
+
+### Download and install the TX-Indexer
+1. Download automated script
+```
+wget https://raw.githubusercontent.com/RaulBernal/spacecraft/main/install_tx-indexer.sh
+```
+
+2. Run it
+```
+chmod +x install_tx-indexer.sh && ./install_tx-indexer.sh
+```
+
+#### Notes
+- After execute the script the daemon will be running and persistent with systemd.
+- You can start the node with: `sudo systemctl start tx-indexer.service && sudo journalctl -fu tx-indexer -o cat`
+- You can stop  the node with: `sudo systemctl stop tx-indexer.service`
+- If you want to reset the TX-Indexer' state to block 0 run: `./reset_tx-indexer.sh` (stop the daemon first please)
 
