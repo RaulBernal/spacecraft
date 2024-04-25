@@ -90,8 +90,7 @@ chmod +x install_enginetwo.sh && ./install_enginetwo.sh
 ```
 
 #### Important notes to start the Parser
-- This is the **alpha** version of EngineTwo. It has some known bugs, like it hangs when reach the last synced block.
-  Instructions for resume it are bellow.
+- This is the **alpha** version of EngineTwo!!!.
 - You can run the parser in a  SCREEN session: `screen -S Parser`  (Press CTRL + A + D to leave it running)
 ```
 cd enginetwo
