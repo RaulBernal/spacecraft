@@ -129,9 +129,9 @@
             "type": "frser-sqlite-datasource",
             "uid": "fdjmu6y220nb4c"
           },
-          "queryText": "SELECT\n  from_address,\n  to_address,\n  amount,\n  time\nFROM transactions\nORDER BY time DESC\nLIMIT 20;",
+          "queryText": "SELECT\n  from_address,\n  to_address,\n  amount,\n  strftime('%s', time) * 1000 AS time\nFROM transactions\nORDER BY time DESC\nLIMIT 20;\n",
           "queryType": "table",
-          "rawQueryText": "SELECT\n  from_address,\n  to_address,\n  amount,\n  time\nFROM transactions\nORDER BY time DESC\nLIMIT 20;",
+          "rawQueryText": "SELECT\n  from_address,\n  to_address,\n  amount,\n  strftime('%s', time) * 1000 AS time\nFROM transactions\nORDER BY time DESC\nLIMIT 20;\n",
           "refId": "A",
           "timeColumns": [
             "time",
@@ -976,14 +976,14 @@
       "type": "bargauge"
     }
   ],
-  "refresh": "auto",
+  "refresh": "5s",
   "schemaVersion": 39,
   "tags": [],
   "templating": {
     "list": []
   },
   "time": {
-    "from": "now-7d",
+    "from": "now-6h",
     "to": "now"
   },
   "timepicker": {},
