@@ -90,7 +90,7 @@ chmod +x install_enginetwo.sh && ./install_enginetwo.sh
 ```
 
 #### Important notes to start the Parser
-- This is the alpha version of EngineTwo. It has some known bugs, like it hangs when reach the last synced block.
+- This is the **alpha** version of EngineTwo. It has some known bugs, like it hangs when reach the last synced block.
   Instructions for resume it are bellow.
 - You can run the parser in a  SCREEN session: `screen -S Parser`  (Press CTRL + A + D to leave it running)
 ```
@@ -101,7 +101,8 @@ sudo -u grafanauser /usr/local/go/bin/go run main.go
 ```
 sudo -u grafanauser nano main.go"
 ```
-- If you want delete the database and start from the scratch: `sudo -u grafanauser rm data.sqlite3`
+If the last message was: `Reached last known block height 5764, waiting for new blocks to be generated...` you need to put here `go verifyAndInsertBlocks(db, 5765)` and rerun with `sudo -u grafanauser /usr/local/go/bin/go run main.go`
+- If you want delete the database and start from the scratch: `sudo -u grafanauser rm data.sqlite3 && sudo -u grafanauser /usr/local/go/bin/go run main.go`
 
 ### 5. Grafana - Connection to SQLite3 db - Dashboard
 1. Download automated script
