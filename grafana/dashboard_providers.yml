@@ -9,4 +9,4 @@ providers:
     editable: true
     options:
       #path: /var/lib/grafana/dashboards
-      /opt/gno/data
+      path: /opt/gno/data
