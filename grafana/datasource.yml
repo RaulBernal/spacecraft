@@ -1,0 +1,12 @@
+apiVersion: 1
+
+datasources:
+  - name: SQLite
+    type: frser-sqlite-datasource
+    access: proxy
+    orgId: 1
+    url: /opt/gno/data/data.sqlite3
+    uid: "fdjmu6y220nb4c"
+    editable: true
+    jsonData:
+      path: /opt/gno/data/data.sqlite3?mode=ro #docker path
