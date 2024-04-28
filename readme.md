@@ -48,7 +48,7 @@
     **2.6. Run with composer**
     If you still are at spacecraft folder:
     ```
-    docker-compose -f docker-compose_images.yml up -d --dry-run
+    docker-compose -f docker-compose_images.yml up -d
     ```
 
 ## Run installing the services in host (instructions for linux/amd64)
