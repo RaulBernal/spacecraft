@@ -1,4 +1,4 @@
-
+# This docker file was used for to build grafana:gno `docker build -t grafana:gno . `
 FROM  grafana/grafana:latest
 
 COPY ./grafana/datasource.yml /etc/grafana/provisioning/datasources/datasource.yaml
