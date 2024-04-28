@@ -30,7 +30,7 @@ services:
       - gnoland-network
 
   enginetwo:
-    image: enginetwo:latest
+    image: enginetwo:grafana
     command: sh /opt/permissions.sh
     volumes:
       - shared-data:/opt/gno/data
