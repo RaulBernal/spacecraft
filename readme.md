@@ -2,7 +2,56 @@
 ![image](https://github.com/RaulBernal/spacecraft/assets/3751926/1376f1b9-299b-4f73-a1c7-e7eb29652574)
 
 
-## Gnoyager 1 might have a chance
+# Gnoyager 1 might have a chance
+
+## Run with Docker. You have two options:
+1. Pull the Docker-Compose file with downloadable images from Docker Hub
+ - Clone this repository or [download the Docker-Compose file](https://raw.githubusercontent.com/RaulBernal/spacecraft/main/docker-compose.yml)
+ - Execute `docker-compose up -d`
+ - After one minute (grafana needs time) go to http://localhost:3000 (admin:admin)
+
+2. Git the source code of each server and **build images locally** before run Docker-Compose:
+   
+    **2.1. Gno (genesis modified & listen address 0.0.0.0 tm2/pkg/bft/rpc/config/config.go)**
+    ```
+    git clone https://github.com/RaulBernal/gno.git
+    cd gno
+    docker build -t gnoland:bind0 . 
+    ```
+    **2.2. TX-Indexder**
+    ```
+    cd ..
+    git clone https://github.com/RaulBernal/tx-indexer.git
+    cd tx-indexer
+    docker build -t tx-indexer:latest .
+    ```
+    **2.3. Supernova**
+    ```
+    cd ..
+    git clone https://github.com/RaulBernal/supernova.git
+    cd supernova
+    docker build -t supernova:script .
+    ```
+    **2.4. Enginetwo parser**
+    ```
+    git clone https://github.com/RaulBernal/enginetwo.git
+    cd enginetwo
+    docker build -t enginetwo:grafana .
+    ```
+    **2.5. Grafana**
+    ```
+    cd ..
+    git clone https://github.com/RaulBernal/spacecraft.git
+    cd spacecraft
+    docker build -t grafana:gno .
+    ```
+    **2.6. Run with composer**
+    If you still are at spacecraft folder:
+    ```
+    docker-compose -f docker-compose_images.yml up -d --dry-run
+    ```
+
+## Run installing the services in host (instructions for linux/amd64)
 
 Please follow this instructions to get everything restored again, what we will do is the following:
 1. Install and run a Gno.Land node (configure keys, accounts, systemd file service, etc)
@@ -14,7 +63,7 @@ Please follow this instructions to get everything restored again, what we will d
 ## Instructions
 > These instructions were tested in two different hosts running Ubuntu Linux v22 amd64
 
-Prerequisites are:
+Prerequisites (with direct install, no docker) are:
 - Linux amd64 (Ubuntu v22 recommended)
 - To have a root or sudoer account
 - GoLang v1.22
