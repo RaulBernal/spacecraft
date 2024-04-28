@@ -1,0 +1,61 @@
+version: '3.8'
+services:
+  gnoland:
+    image: bernalraul/gnoland:bind0
+    command: gnoland start
+    ports:
+      - "26657:26657"
+      - "36657:36657"
+    volumes:
+      - shared-data:/opt/gno/data
+    networks:
+      - gnoland-network
+
+  tx-indexer:
+    image: bernalraul/tx-indexer:latest
+    command: start --remote http://gnoland:26657
+    ports:
+      - "8546:8546"
+    volumes:
+      - shared-data:/opt/gno/data
+    networks:
+      - gnoland-network
+
+  supernova:
+    image: bernalraul/supernova:script
+    command: sh /supernova_simulation_light.sh
+    volumes:
+      - shared-data:/opt/gno/data
+    networks:
+      - gnoland-network
+
+  enginetwo:
+    image: bernalraul/enginetwo:grafana
+    command: sh /opt/permissions.sh
+    volumes:
+      - shared-data:/opt/gno/data
+    networks:
+      - gnoland-network
+
+  grafana:
+    container_name: grafana
+    environment:
+      GF_INSTALL_PLUGINS: "frser-sqlite-datasource"
+    networks:
+      - gnoland-network
+    image: bernalraul/grafana:gno
+    volumes:
+      - shared-data:/opt/gno/data
+
+    ports:
+      - 3000:3000
+
+
+
+networks:
+  gnoland-network:
+    driver: bridge
+
+volumes:
+  shared-data:
+    driver: local
